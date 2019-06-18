@@ -16,10 +16,10 @@ fastify.post("/api/auth", async (request, reply) => {
     let _userName = body["username"];
     let _password = body["password"];
 
-    let sess = await randomNum();
+    let session = await randomNum();
     console.log(sess)
-    reply.setCookie('Cookie',sess)
-    return sess;
+    reply.setCookie('sess',session)
+    return session;
   
   })
   
