@@ -17,10 +17,17 @@ fastify.post("/api/auth", async (request, reply) => {
     let _password = body["password"];
 
     let session = await randomNum();
-    console.log(sess)
+    // console.log(session)
     reply.setCookie('sess',session)
     return session;
   
+  })
+
+  fastify.get("/test", async (request, reply) => {
+    let cooke = request.cookies;
+    console.log(cooke)
+    return cooke
+    
   })
   
 // Run the server!
